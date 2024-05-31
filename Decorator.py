@@ -1,11 +1,12 @@
 def is_prime(func):
     def wrapper(*args):
         result = func(*args)
-        for i in range(2, result):
-            if result % i == 0:
-                return f'{result} \n Составное'
-            else:
-                return f' {result} \n Простое'
+        for i in range(2, result +1):
+            for j in range(2, result):
+                if result % j == 0:
+                    return f'{result} \n Составное'
+                else:
+                    return f' {result} \n Простое'
     return wrapper
 
 
